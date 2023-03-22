@@ -13,6 +13,5 @@ public class Main {
                 new MainWindow(controller);
             }
         });
-        aaaaa
     }*/
 }
