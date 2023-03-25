@@ -10,9 +10,15 @@ public class Controller {
         this.backEnd = backEnd;
     }
 
-    public boolean login(String user, String password) {
-        currentUser = backEnd.login(user, password);
-        return currentUser != null;
+    public void login() {
+        String nombreUsuario = vista.getNombreUsuario();
+        String contrasena = vista.getContrasena();
+        Usuario usuario = backend.validarUsuario(nombreUsuario, contrasena);
+        if (usuario != null) {
+            vista.mostrarNombreUsuario(usuario.getNombreCompleto());
+        } else {
+            vista.mostrarMensajeError("Nombre de usuario o contraseña incorrectos");
+        }
     }
 
     public void logout() {
