@@ -1,3 +1,5 @@
+import src.Model.Usuario;
+
 public class Personal extends Usuario {
     private int idPersonal;
     private String puesto;

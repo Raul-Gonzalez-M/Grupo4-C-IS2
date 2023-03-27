@@ -1,9 +1,13 @@
+import java.util.List;
+import java.util.ArrayList;
+import src.Model.Actividad;
+
 public class Aula {
     
     private int capacidadMaxima;
     private int capacidadActual;
     private String nombre;
-    private List<Clase> clases;
+    private List<Actividad> clases;
     
     public Aula(int capacidadMaxima, String nombre) {
         this.capacidadMaxima = capacidadMaxima;
@@ -24,11 +28,11 @@ public class Aula {
         return nombre;
     }
     
-    public List<Clase> getClases() {
+    public List<Actividad> getClases() {
         return clases;
     }
     
-    public void agregarClase(Clase clase) {
+    public void agregarClase(Actividad clase) {
         if (capacidadActual < capacidadMaxima) {
             clases.add(clase);
             capacidadActual++;
@@ -37,7 +41,7 @@ public class Aula {
         }
     }
     
-    public void eliminarClase(Clase clase) {
+    public void eliminarClase(Actividad clase) {
         if (clases.remove(clase)) {
             capacidadActual--;
         }
